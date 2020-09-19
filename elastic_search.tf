@@ -26,7 +26,7 @@ resource "aws_elasticsearch_domain" "main" {
   }
 
   tags = {
-    Domain = "Sample Elasticsearch"
+    Name = "Elasticsearch and RDP sample"
   }
 
   depends_on = [aws_iam_service_linked_role.main]

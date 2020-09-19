@@ -3,7 +3,7 @@ resource "aws_security_group" "elasticsearch" {
   vpc_id = aws_vpc.main.id
 
   tags = {
-    Name = "Elasticsearch"
+    Name = "Elasticsearch and RDP sample"
   }
 }
 
@@ -12,7 +12,7 @@ resource "aws_security_group" "rdp" {
   vpc_id = aws_vpc.main.id
 
   tags = {
-    Name = "RDP"
+    Name = "Elasticsearch and RDP sample"
   }
 }
 

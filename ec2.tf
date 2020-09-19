@@ -1,5 +1,5 @@
 # Microsoft Windows Server 2019 Base
-resource "aws_instance" "main" {
+resource "aws_instance" "windows_rdp" {
   ami                         = "ami-0afc3e2b95d00c51a"
   instance_type               = "t3.micro"
   key_name                    = "rdp-key" # already created

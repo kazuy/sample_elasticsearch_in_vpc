@@ -4,7 +4,7 @@ resource "aws_vpc" "main" {
   enable_dns_hostnames = true
 
   tags = {
-    Name = "Elasticsearch and RDP sample VPC"
+    Name = "Elasticsearch and RDP sample"
   }
 }
 
@@ -13,7 +13,7 @@ resource "aws_subnet" "main" {
   cidr_block = "12.0.1.0/24"
 
   tags = {
-    Name = "Elasticsearch and RDP sample Subnet"
+    Name = "Elasticsearch and RDP sample"
   }
 }
 
@@ -21,7 +21,7 @@ resource "aws_internet_gateway" "main" {
   vpc_id = aws_vpc.main.id
 
   tags = {
-    Name = "Elasticsearch and RDP sample Internet Gateway"
+    Name = "Elasticsearch and RDP sample"
   }
 }
 
@@ -32,7 +32,7 @@ resource "aws_route_table" "main" {
     gateway_id = aws_internet_gateway.main.id
   }
   tags = {
-    Name = "Elasticsearch and RDP sample Route table"
+    Name = "Elasticsearch and RDP sample"
   }
 }
 
