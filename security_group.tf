@@ -37,9 +37,18 @@ locals {
 
 resource "aws_security_group_rule" "connect_to_rdp" {
   type              = "ingress"
-  from_port         = 22
-  to_port           = 22
+  from_port         = 3389
+  to_port           = 3389
   protocol          = "tcp"
   security_group_id = aws_security_group.rdp.id
   cidr_blocks       = [local.allowed-cidr]
+}
+
+resource "aws_security_group_rule" "outbound_all" {
+  type              = "egress"
+  from_port         = 0
+  to_port           = 0
+  protocol          = "-1"
+  security_group_id = aws_security_group.rdp.id
+  cidr_blocks       = ["0.0.0.0/0"]
 }
